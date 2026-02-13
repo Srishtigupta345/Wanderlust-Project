@@ -50,7 +50,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Session Store
 const store = MongoStore.create({
     mongoUrl: dbUrl,
-    touchAfter: 24 * 3600,
+    touchAfter: 24 * 3600, 
 });
 
 store.on("error", (err) => {
@@ -102,7 +102,8 @@ app.use((err, req, res, next) => {
 });
 
 // Server
-app.listen(8080, () => {
-    console.log("Server is listening on port 8080");
+const port = process.env.Port || 8080;
+app.listen(port, () => {
+    console.log(`Server is listening on port ${port}`);
 });
 
