@@ -5,22 +5,24 @@ module.exports.signupForm = (req, res) => {
     res.render("users/signup.ejs");
 }
 
-module.exports.signup = async (req, res) =>  {
+module.exports.signup = async (req, res, next) =>  {
     try {
-        let { username, email, password } = req.body;
-        const newUser = new User({ email, username });
-        const registeredUser = await User.register(newUser, password);
+        const { username, email, password } = req.body;
+        const user = new User({ username, email });
+        // passport-local-mongoose method
+        const registeredUser = await User.register(user, password);
         console.log(registeredUser);
         // Automatic Login as registred User
         req.login(registeredUser, (err) => {
             if(err) {
+                console.log("LOGIN ERROR:", err);
                 return next(err);
             }
             req.flash("success", "Welcome to Wanderlust!");
             res.redirect("/listings");
         });
-    } catch(e) {
-        req.flash("error", e.message);
+    } catch(err) {
+        req.flash("error", err.message);
         res.redirect("/signup");
     }
 };
