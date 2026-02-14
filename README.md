@@ -63,14 +63,17 @@ MongoDB Atlas
 1️⃣ Clone the repository
 git clone https://github.com/your-username/wanderlust.git
 cd wanderlust
+
 2️⃣ Install dependencies
 npm install
+
 3️⃣ Create .env file
 ATLAS_DB_URL=your_mongodb_connection_string
 CLOUD_NAME=your_cloudinary_name
 CLOUD_API_KEY=your_key
 CLOUD_API_SECRET=your_secret
 SESSION_SECRET=your_secret
+
 4️⃣ Run the server
 npm start
 App will run on:
