@@ -26,8 +26,9 @@ Built using the MERN backend stack with authentication, session management, clou
 
 🌐 Deployed on Render
 
-🛠 Tech Stack
-Backend
+🛠 Tech Stack 
+
+Backend :-
 
 Node.js
 
@@ -43,7 +44,7 @@ express-session
 
 connect-mongo
 
-Frontend
+Frontend :-
 
 EJS
 
@@ -51,13 +52,13 @@ Bootstrap
 
 Leaflet.js
 
-Deployment
+Deployment :-
 
 Render
 
 MongoDB Atlas
 
-📦 Installation (For Local Setup)
+📦 Installation (For Local Setup) 
 
 1️⃣ Clone the repository
 git clone https://github.com/your-username/wanderlust.git
@@ -75,7 +76,7 @@ npm start
 App will run on:
 http://localhost:8080
 
-🔐 Authentication & Authorization
+🔐 Authentication & Authorization 
 
 Uses passport-local-mongoose
 
